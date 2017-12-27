@@ -9,6 +9,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     lateinit var requestAlbumsTextView: TextView
+   // lateinit var presenter: MainActivityPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
