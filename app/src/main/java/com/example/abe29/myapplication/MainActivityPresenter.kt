@@ -2,6 +2,7 @@ package com.example.abe29.myapplication
 
 import com.example.abe29.myapplication.dto.AlbumDto
 import com.example.abe29.myapplication.network.ITopAlbumsService
+import java.lang.Thread.sleep
 import javax.security.auth.callback.Callback
 
 /**
@@ -14,8 +15,8 @@ open class MainActivityPresenter(private var view: MainActivityView, private var
 
         service.requestAlbums(object : ITopAlbumsService.Callback {
             override fun success(albums: List<AlbumDto>) {
-                view.hideProgressDialog()
                 view.displayAlbums(albums)
+                view.hideProgressDialog()
             }
 
             override fun failure() {
